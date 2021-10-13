@@ -21,7 +21,7 @@ The documentation contains information about how to setup and run the two planne
 
 > **Note** PX4-side setup is covered in the PX4 User Guide:
   - [Obstacle Avoidance](https://docs.px4.io/en/computer_vision/obstacle_avoidance.html)
-  - [Collision Prevention](https://docs.px4.io/en/computer_vision/collision_prevention.html)
+  - ssdssssssss[Collision Prevention](https://docs.px4.io/en/computer_vision/collision_prevention.html)
 
 [![PX4 Avoidance video](http://img.youtube.com/vi/VqZkAWSl_U0/0.jpg)](https://www.youtube.com/watch?v=VqZkAWSl_U0)
 
@@ -66,7 +66,7 @@ You might want to skip some steps if your system is already partially installed.
 1. Install ROS with Gazebo:
      ```bash
      sudo apt install ros-melodic-desktop-full
-
+     
      # Source ROS
      echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
      source ~/.bashrc
@@ -88,7 +88,7 @@ You might want to skip some steps if your system is already partially installed.
    sudo apt install python-rosdep
    # for ros-noetic install: 
    sudo apt install python3-rosdep
-
+   
    rosdep init
    rosdep update
    ```
@@ -172,12 +172,12 @@ In the following section we guide you through installing and running a Gazebo si
    ```bash
    # This is necessary to prevent some Qt-related errors (feel free to try to omit it)
    export QT_X11_NO_MITSHM=1
-
+   
    # Build and run simulation
    make px4_sitl_default gazebo
    
    # Quit the simulation (Ctrl+C)
-
+   
    # Setup some more Gazebo-related environment variables (modify this line based on the location of the Firmware folder on your machine)
    . ~/Firmware/Tools/setup_gazebo.bash ~/Firmware ~/Firmware/build/px4_sitl_default
    ```
@@ -211,7 +211,7 @@ Any of the following three launch file scripts can be used to run local planner:
   ```bash
   roslaunch local_planner local_planner_stereo.launch
   ```
-    
+  
   > **Note:** The disparity map from `stereo-image-proc` is published as a [stereo_msgs/DisparityImage](http://docs.ros.org/api/stereo_msgs/html/msg/DisparityImage.html) message, which is not supported by rviz or rqt. 
   > To visualize the message, first open a *new terminal* and setup the required environment variables:
   > ```bash
@@ -226,7 +226,7 @@ Any of the following three launch file scripts can be used to run local planner:
   >   ```bash
   >   rosrun topic_tools transform /stereo/disparity /stereo/disparity_image sensor_msgs/Image 'm.image' 
   >   ```
-  > The disparity map can then be visualized by *rviz* or *rqt* under the topic */stereo/disparity_image*.
+  >   The disparity map can then be visualized by *rviz* or *rqt* under the topic */stereo/disparity_image*.
 
 * `local_planner_depth_camera`: simulates vehicle with one forward-facing kinect sensor
   ```bash
